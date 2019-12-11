@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="pt.tvtime.app.ui.HomeFragment"
+        android:label="Home Page"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_favotirosFragment"
+            app:destination="@id/favotirosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_vistosFragment"
+            app:destination="@id/vistosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favotirosFragment"
+        android:name="pt.tvtime.app.ui.FavoritosFragment"
+        android:label="Favoritos"
+        tools:layout="@layout/fragment_favotiros">
+        <action
+            android:id="@+id/action_favotirosFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vistosFragment"
+        android:name="pt.tvtime.app.ui.VistosFragment"
+        android:label="Episódios Vistos"
+        tools:layout="@layout/fragment_vistos">
+        <action
+            android:id="@+id/action_vistosFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="pt.tvtime.app.ui.SettingsFragment"
+        android:label="Definições"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="pt.tvtime.app.ui.SearchFragment"
+        android:label="Pesquisa"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/serieDetailsFragment"
+        android:name="pt.tvtime.app.ui.SerieDetailsFragment"
+        android:label="fragment_serie_details"
+        tools:layout="@layout/fragment_serie_details" />
+</navigation>

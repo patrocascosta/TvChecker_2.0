@@ -1,0 +1,51 @@
+CREATE TABLE users (
+id_user int(5)  PRIMARY KEY,
+nome VARCHAR(25) NOT NULL,
+password VARCHAR(25) NOT NULL,
+email varchar(40) NOT NULL,
+nacionalidade varchar(25) NOT NULL,
+username varchar(20));
+
+CREATE TABLE series (
+    id_serie int(10) PRIMARY KEY,
+    nome_serie varchar(25) NOT NULL,
+    descricao varchar(300),
+    imdb double NOT NULL,
+    image varchar(200)
+    );
+ 
+CREATE TABLE Categoria (
+    id_categoria int(5) PRIMARY KEY,
+    nome_categoria varchar(20) NOT NULL
+    );
+    
+CREATE TABLE Episodios (
+    id_ep int(5) PRIMARY KEY,
+    nome_ep varchar(20),
+    id_serie int(5),
+    temporada int(3) NOT NULL,
+    FOREIGN KEY (id_serie) REFERENCES series(id_serie)
+    );
+ 
+CREATE TABLE user_ep(
+    id_user_ep int(5) PRIMARY KEY,
+    id_user int(5),
+    id_ep int(5),
+    visto BOOLEAN,
+FOREIGN KEY (id_user) REFERENCES users(id_user),
+FOREIGN KEY (id_ep) REFERENCES Episodios(id_ep));
+    
+CREATE TABLE user_serie(
+    id_user_serie int(5) PRIMARY KEY,
+    id_user int(5),
+    id_serie int(5),
+    visto varchar(25),
+FOREIGN KEY (id_user) REFERENCES users(id_user),
+FOREIGN KEY (id_serie) REFERENCES series(id_serie));
+
+CREATE TABLE serie_categoria(
+    id_seriecat int(5) PRIMARY KEY,
+    id_serie int(5),
+    id_categoria int(5),
+    FOREIGN KEY (id_serie) REFERENCES series(id_serie),
+    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria));

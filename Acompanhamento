@@ -1,0 +1,124 @@
+TV Checker.
+
+    1º Semana - 16/09 - 22/09
+    
+        Objectivos da semana:
+        
+           
+                - Rever principios e formas inovadoras de implemntar apis e codigo na nossa aplicação 
+                - Completar 2 topicos do que falta fazer da aplicação:
+                - Completar os aspectos visuais de todas as activities
+                - Adicionar mais Categorias a home page.
+                
+                - Dia de reunião (em horas extraordinarias): 19/09/2019 14:00 - 19:00
+                
+                    Resultado da reunião:
+                    
+                        - Não nos conseguimos encontrar por emprevitos, mas esclarecemos no dia data da proxima reunião.
+                        - Distribuição de trabalhos para o grupo:
+                            - Layout da Search - João Caeiro
+                            - Layout das Definições - Patricia Costa
+                            - Layout da HomePage (redesigned to use have GrindLayout) - Carlos Rosa
+                            - Layout da Watched e Series Details - Guilherme Doutor
+                            
+                
+    2º Semana - 23/09 - 29/09
+    
+        Objectivos da semana:
+           
+           - Realizar um diagrama para a apresentação de ecras da aplicação
+           - Limar algumas arestas e melhoramento do design da aplicação
+           - Retificar alguns problemas que a aplicação relativos com conexão a base de dados
+           - Completar as activities ainda por fazer da aplicação e tentar ate ao fim da semana ter uma aplicação funcional pronta para continuar a ser trabalha para atingir os objectivos propostos nesta UC.
+           
+           - Dia de reunião (em horas extraordinarias): 26/09/2019 14:00 - 17:00 :
+           
+                Resultado da reunião:
+                
+                    - Esclaremos ideias de como deveriamos melhorar o design da aplicação.
+                    - Coordenação de trabalhos a serem realizados durante fim de semana para cada elemento.
+                    - Criação de cenários de utilização da nossa aplicação.
+                    - Planeamento da proxima reunião.
+                    - Depois com o tempo restante começamos a desenvolver as activities da aplicação.
+                    
+                    - Distribuição de trabalhos: ( all of this work is about coding not design anymore)
+                    
+                        - Programar a Search Activity e novo Layout da Search - Patricia Costa
+                        - Programar Series Details e o novo Layout da Series Details - Guilherme Doutor
+                        - Programar Definicoes e o novo Layout das Definicoes - João Caeiro
+                        - Programar HomePage e o seu novo Layout - Carlos Rosa
+           
+           
+        3º Semana - 30/09 - 6/10
+        
+            Objectivos da semana:
+                
+                - Começar a fazer a aplicação denovo.
+                
+            Dia de Reunião 1/10/2019:
+            
+                - Concluimos que deveriamos refazer a aplicação do lado codigo da aplicação e redesenhar
+                  algumas das partes da aplicação que ja tinhamos feito em semanas anteriores.
+                - Continuamos com as mesmas tarefas mas denovo desta vez (onde em vez de tentar arranjar o que ainda não estava feito começamos denovo tudo).
+                
+        4º Semana - 7/10 - 13/10
+        
+            Objectivos da semana:
+            
+                - Concluir a aplicação.
+                - Ver que API's em principio iremos precisar
+                - Fazer um esboço para a nova base de dados.
+            
+            Dia de reunião 10/10:
+            
+                - Concluimos rapidamente a reunião porque todos os membros sabiam o que tinhamos o que fazer nesta semana.
+                
+        5º Semana - 14/10 - 20/10
+        
+            Objectivos da semana:
+            
+                - Concluir a aplicação ( em termos de intents, estruturas de navegação e funcionamento basico)
+                - Pensar como a nova base de dados seria e como a iriamos relacionar e que API queremos usar e relacionar com a base de dados
+                
+            Dia de reunião 21/10 - 27/10:
+                
+                - Concluimos em tentar acabar os basicos da aplicação mas contudo não haveria bastante tempo para faze-lo porque haviam frequencias para todos nesta semana e tambem queriamos algum tempo para nos.
+        
+        6º Semana 21/10 - 27/10:
+        
+             Objectivos da semana:
+                
+                - Fazer uma fake API para conseguir avançar com o desenvolvimento da aplicação com as novas materias e conceitos dados nas disciplinas.
+                - Implementar a biblioteca retrofit na aplicação e desenvolver a parte da aplicação que envolva o consumo de API's, depois de reteficar e acabar os funcionamentos basicos da aplicação
+            
+             Dia de reunião  23/10:
+                
+                    - Concluimos que deviamos começar a desenvolver a parte mais relacionada com o fetch de dados a base de dados e a API o mais cedo possivel, e que dentro de 2 ou 3 semanas realizar o back office.
+            
+         7º Semana 28/10 - 3/11:
+         
+            Objectivos da semana:
+                
+                - Concluir a API que iremos usar
+                - Começar a implementar codigo para o uso da API na aplicação
+                
+            Dia de reunião 31-10:
+           
+                    - Concluir a API - Patricia Costa
+                    - Concluir a HomePage - Carlos Rosa
+                    - Concluir a activity dos vistos - João Caeiro
+                    
+         8º Semana  4/11 - 10/11:
+         
+            Objectivos da semana:
+            
+                - Acabar o backoffice
+                - Continuar a atrabalhar na aplicação depois do backoffice estar feito
+                
+            Dia de reunião 5/11:
+            
+                - Começamos a trabalhar no backoffice.
+                - Conversamos que trabalho fizemos durante o fim de semana para saber o que ainda falta fazer e continuar com o projeto.
+                
+                
+        

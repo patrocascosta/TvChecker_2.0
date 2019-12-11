@@ -1,0 +1,31 @@
+TV Checker
+
+	Planning: 
+  
+			- O que já está feito na aplicação:
+      
+				- Login and Sign up da aplicação
+				- O parte visual da aplicação ja está feita (excepto as definições)
+				- Activity Epsodios vistos ja estao feitos (falta a parte das temporadas e episodios e favoritos a esta activity)
+				
+
+
+			- O que falta fazer:
+
+				  O que falta fazer na aplicação:
+
+					  - Falta fazer o aspecto visual da pesquisa 
+            - Falta completar a activity das series
+  					- Falta completar a activity dos favoritos
+	  				- Falta completar a activity do search 
+		  			- (se possivel ) adicionar mais opções na homepage
+			  		- Por a activity log out nas definições
+				  	- Criar a acticity definições
+					  - Se possivel adicionar ao botão da para ir para activity dos vistos para qd
+              se já se tiver nos vistos ira para o inicio da pagina vistos
+				
+				  O que falta fazer para o projeto:
+		
+					  - Pagina web ( Back office para adicionar coisas a base de dados para atualizar a aplicação)
+					  - Relatório
+					  - Reportorio github organizado
