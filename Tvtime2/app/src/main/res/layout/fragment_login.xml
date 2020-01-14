@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextEmail"
         android:layout_width="305dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,6 +1,7 @@
 package pt.tvtime.app.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,9 +15,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import pt.tvtime.app.R;
+import pt.tvtime.app.SignInActivity;
 
 
 public class SignUpFragment extends Fragment {
+
+
+
+        public static void startActivity(Context context) {
+            context.startActivity(new Intent(context, SignInActivity.class));
+        }
 
 
     @Override
