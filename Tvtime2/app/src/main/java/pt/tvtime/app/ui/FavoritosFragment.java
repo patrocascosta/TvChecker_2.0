@@ -38,27 +38,29 @@ public class FavoritosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favotiros, container, false);
+        View view = inflater.inflate(R.layout.fragment_favotiros, container, false);
 
-        this.adapter = new FavoritosAdapter(this);
-        listView = findViewById(R.id.listViewFavoritos);
+        this.adapter = new FavoritosAdapter(getActivity());
+        listView = view.findViewById(R.id.listViewFavoritos);
         listView.setAdapter(adapter);
 
         this.viewModel = ViewModelProviders.of(this).get(FavoritosViewModel.class);
 
-        LiveData<List<Favorito>> liveDataFavoritos = this.viewModel.getFavoritos(this);
+        LiveData<List<Favorito>> liveDataFavoritos = this.viewModel.getFavoritos(getActivity());
         liveDataFavoritos.observe(this, new Observer<List<Favorito>>() {
             @Override
             public void onChanged(List<Favorito> favoritos) {
                 FavoritosFragment.this.adapter.updateFavoritos(favoritos);
             }
         });
+
+        return view;
     }
 
     @Override
-    protected void onResume(){
+    public void onResume(){
         super.onResume();
-        this.viewModel.updateFavoritos(this);
+        this.viewModel.updateFavoritos(getActivity());
     }
 
 

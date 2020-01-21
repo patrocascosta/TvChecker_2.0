@@ -13,10 +13,10 @@ import pt.tvtime.app.remoterepository.SeriesRepository;
 public class FavoritosViewModel extends ViewModel {
 
     public LiveData<List<Favorito>> getFavoritos(Context context){
-        return SeriesRepository.getInstance(context).getFavoritos();
+        return SeriesRepository.getInstance(context).getAllFavoritos();
     }
 
     public void updateFavoritos(Context context){
-        SeriesRepository.getInstance(context).updateFavoritos();
+     //   SeriesRepository.getInstance(context).updateFavoritos();
     }
 }

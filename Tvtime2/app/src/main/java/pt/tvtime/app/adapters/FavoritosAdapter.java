@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import pt.tvtime.app.R;
@@ -24,9 +25,9 @@ public class FavoritosAdapter extends BaseAdapter {
     private List<Favorito> favoritoList;
     private Context context;
 
-    public FavoritosAdapter (Context context, List<Favorito> favoritos){
+    public FavoritosAdapter (Context context){
         this.context = context;
-        this.favoritoList = favoritos;
+        this.favoritoList = new ArrayList<>();
     }
 
 

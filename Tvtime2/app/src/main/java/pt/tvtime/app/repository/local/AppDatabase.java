@@ -9,13 +9,19 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import pt.tvtime.app.model.Favorito;
 import pt.tvtime.app.model.User;
+import pt.tvtime.app.repository.local.dao.FavoritosDAO;
 import pt.tvtime.app.repository.local.dao.UserDAO;
 
-@Database(entities = {User.class},version=1)
+@Database(entities = {
+        User.class,
+        Favorito.class
+},version=1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract UserDAO getUserDAO();
+    public abstract FavoritosDAO getFavoritosDAO();
 
     private static AppDatabase INSTANCE;
 
