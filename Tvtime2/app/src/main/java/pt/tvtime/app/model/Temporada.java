@@ -11,6 +11,12 @@ public class Temporada {
     private int idSerie;
     private  int idEpisodio;
 
+    public Temporada(long idTemporada, int idSerie, int idEpisodio) {
+        this.idTemporada = idTemporada;
+        this.idSerie = idSerie;
+        this.idEpisodio = idEpisodio;
+    }
+
     public long getIdTemporada() {
         return idTemporada;
     }

@@ -62,4 +62,15 @@
         app:layout_constraintStart_toEndOf="@+id/imageViewSerie"
         app:layout_constraintTop_toBottomOf="@+id/textViewPontuacao" />
 
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="74dp"
+        android:layout_height="28dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPontuacao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewPontuacao"
+        app:layout_constraintTop_toTopOf="@+id/textViewPontuacao" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
