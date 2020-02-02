@@ -9,7 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="pt.tvtime.app.ui.HomeFragment"
         android:label="Home Page"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_home_row">
         <action
             android:id="@+id/action_homeFragment_to_favotirosFragment"
             app:destination="@id/favotirosFragment" />
@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_serieDetailsFragment"
+            app:destination="@id/serieDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/favotirosFragment"
@@ -31,6 +34,9 @@
         <action
             android:id="@+id/action_favotirosFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_favotirosFragment_to_serieDetailsFragment"
+            app:destination="@id/serieDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/vistosFragment"
@@ -40,6 +46,9 @@
         <action
             android:id="@+id/action_vistosFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_vistosFragment_to_serieDetailsFragment"
+            app:destination="@id/serieDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"

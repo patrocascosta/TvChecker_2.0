@@ -10,14 +10,15 @@ import java.util.List;
 import pt.tvtime.app.model.Favorito;
 import pt.tvtime.app.model.Visto;
 import pt.tvtime.app.remoterepository.SeriesRepository;
+import pt.tvtime.app.ui.VistosFragment;
 
 public class VistosViewModel extends ViewModel {
 
     public LiveData<List<Visto>> getVistos(Context context){
-        return SeriesRepository.getInstance(context).getVistos();
+        return SeriesRepository.getInstance(context).getAllVistos();
     }
 
     public void updateVistos(Context context){
-        SeriesRepository.getInstance(context).updateVistos();
+        SeriesRepository.getInstance(context).upDateVistos();
     }
 }

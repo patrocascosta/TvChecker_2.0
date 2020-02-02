@@ -13,26 +13,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pt.tvtime.app.R;
-import pt.tvtime.app.model.Visto;
+import pt.tvtime.app.model.Serie;
 
-public class VistosAdapter extends BaseAdapter {
+public class HomeAdapter extends BaseAdapter {
 
-    private List<Visto> vistoList;
+    private List<Serie> serieList;
     private Context context;
 
-    public VistosAdapter(Context context){
+    public HomeAdapter(Context context){
         this.context = context;
-        this.vistoList = new ArrayList<>();
+        this.serieList = new ArrayList<>();
     }
 
     @Override
     public int getCount() {
-        return this.vistoList.size();
+        return this.serieList.size();
     }
 
     @Override
-    public Visto getItem(int position) {
-        return this.vistoList.get(position);
+    public Serie getItem(int position) {
+        return this.serieList.get(position);
     }
 
     @Override
@@ -44,19 +44,19 @@ public class VistosAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if (convertView == null){
-            convertView = LayoutInflater.from(this.context).inflate(R.layout.row, parent, false);
+            convertView = LayoutInflater.from(this.context).inflate(R.layout.fragment_home_row, parent, false);
         }
 
-        Visto visto = getItem(position);
+        Serie serie = getItem(position);
 
-        ImageView serieImage = convertView.findViewById(R.id.serieImage1);
-        Glide.with(this.context).load(visto.getImage()).into(serieImage);
+        ImageView serieImage = convertView.findViewById(R.id.imageViewHome);
+        Glide.with(this.context).load(serie.getImagem()).into(serieImage);
 
         return convertView;
     }
 
-    public void updateVisto(List<Visto> vistos){
-        this.vistoList = vistos;
+    public void updateHome(List<Serie> vistos){
+        this.serieList = vistos;
         notifyDataSetChanged();
     }
 }

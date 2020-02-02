@@ -11,6 +11,17 @@ public class Favorito {
     private long idSerie;
     private boolean favorito;
     private long idFavoritos;
+    private String image;
+
+    public Favorito(long idUser, long idSerie, boolean favorito, long idFavoritos, String image) {
+        this.idUser = idUser;
+        this.idSerie = idSerie;
+        this.favorito = favorito;
+        this.idFavoritos = idFavoritos;
+        this.image = image;
+    }
+
+
 
     public long getIdUser() {
         return idUser;
@@ -43,5 +54,12 @@ public class Favorito {
 
     public void setIdFavoritos(long idFavoritos) {
         this.idFavoritos = idFavoritos;
+    }
+
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
     }
 }

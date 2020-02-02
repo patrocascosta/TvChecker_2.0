@@ -1,5 +1,6 @@
 package pt.tvtime.app.repository.local.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -12,7 +13,7 @@ import java.util.List;
 public interface VistosDAO {
 
     @Query("SELECT * FROM Visto")
-    public List<Visto> getAllVistos();
+    LiveData<List<Visto>> getAllVistos();
 
     @Update
     public void update(Visto visto);

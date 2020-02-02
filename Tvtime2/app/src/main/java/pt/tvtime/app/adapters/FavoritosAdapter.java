@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -18,7 +20,6 @@ import java.util.List;
 
 import pt.tvtime.app.R;
 import pt.tvtime.app.model.Favorito;
-import pt.tvtime.app.model.Serie;
 
 public class FavoritosAdapter extends BaseAdapter {
 
@@ -55,13 +56,10 @@ public class FavoritosAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.row, null);
         }
 
-        Serie serie = getItem(position);
+        Favorito favorito = getItem(position);
 
         ImageView serieImage1 = convertView.findViewById(R.id.serieImage1);
-        Glide.with(this.context).load(serie.getImage()).into(serieImage1);
-
-        ImageView serieImage2 = convertView.findViewById(R.id.serieImage2);
-        Glide.with(this.context).load(serie.getImage()).into(serieImage2);
+        Glide.with(this.context).load(favorito.getImage()).into(serieImage1);
 
         return convertView;
     }

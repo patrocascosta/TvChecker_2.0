@@ -13,6 +13,13 @@ public class Episodio {
     private int duracao;
     private int idTemporada;
 
+    public Episodio(long idEpisodio, String nomeEpisodio, int duracao, int idTemporada) {
+        this.idEpisodio = idEpisodio;
+        this.nomeEpisodio = nomeEpisodio;
+        this.duracao = duracao;
+        this.idTemporada = idTemporada;
+    }
+
 
     public long getIdEpisodio() {
         return idEpisodio;

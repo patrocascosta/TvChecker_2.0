@@ -16,6 +16,16 @@ public class Serie {
     private String  imagem;
     public Boolean visto;
 
+    public Serie(long idSerie, String nomeSerie, long idCategoria, String imdb, String descricao, String imagem) {
+        this.idSerie = idSerie;
+        this.nomeSerie = nomeSerie;
+        this.idCategoria = idCategoria;
+        this.imdb = imdb;
+        this.descricao = descricao;
+        this.imagem = imagem;
+    }
+
+
     public void setIdCategoria(long idCategoria) {
         this.idCategoria = idCategoria;
     }
@@ -78,6 +88,4 @@ public class Serie {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
-
-
 }

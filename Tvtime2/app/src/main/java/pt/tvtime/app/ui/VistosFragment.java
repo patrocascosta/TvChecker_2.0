@@ -3,6 +3,8 @@ package pt.tvtime.app.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -11,7 +13,8 @@ import androidx.lifecycle.ViewModelProviders;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import java.util.List;
 
@@ -24,11 +27,9 @@ import pt.tvtime.app.viewmodel.VistosViewModel;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class VistosFragment extends Fragment {
+public class VistosFragment extends ListFragments {
 
     private VistosAdapter adapter;
-    private ListView listView;
-
     private VistosViewModel viewModel;
 
 
@@ -36,32 +37,38 @@ public class VistosFragment extends Fragment {
         // Required empty public constructor
     }
 
-
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vistos, container, false);
+        View view = inflater.inflate(R.layout.fragment_vistos, container, false);
 
-        this.adapter = new VistosAdapter(this);
-        listView = findViewById(R.id.listViewVistos);
+        this.adapter = new VistosAdapter(getActivity());
+        GridView listView = view.findViewById(R.id.listViewVistos);
         listView.setAdapter(adapter);
 
         this.viewModel = ViewModelProviders.of(this).get(VistosViewModel.class);
 
-        LiveData<List<Visto>> liveDataVistos = this.viewModel.getVistos(this);
-        liveDataVistos.observe(this, new Observer<List<Visto>>() {
+        LiveData<List<Visto>> liveDataVistos = this.viewModel.getVistos(getActivity());
+        liveDataVistos.observe(getActivity(), new Observer<List<Visto>>() {
             @Override
             public void onChanged(List<Visto> vistos) {
-                VistosFragment.this.adapter.updateVisto(vistos);
+                adapter.updateVisto(vistos);
             }
         });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                VistosFragment.super.onItemClicked(ListFragments.ROUTE_FROM_VISTO, id);
+            }
+        });
+        return view;
     }
 
     @Override
-    protected void onResume(){
+    public void onResume(){
         super.onResume();
-        this.viewModel.updateVistos(this);
+        this.viewModel.updateVistos(getActivity());
     }
-
 }

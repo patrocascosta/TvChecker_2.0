@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.List;
@@ -22,11 +23,9 @@ import pt.tvtime.app.model.Favorito;
 import pt.tvtime.app.viewmodel.FavoritosViewModel;
 
 
-public class FavoritosFragment extends Fragment {
+public class FavoritosFragment extends ListFragments {
 
     private FavoritosAdapter adapter;
-    private ListView listView;
-
     private FavoritosViewModel viewModel;
 
     @Override
@@ -41,7 +40,7 @@ public class FavoritosFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_favotiros, container, false);
 
         this.adapter = new FavoritosAdapter(getActivity());
-        listView = view.findViewById(R.id.listViewFavoritos);
+        ListView listView = view.findViewById(R.id.listViewFavoritos);
         listView.setAdapter(adapter);
 
         this.viewModel = ViewModelProviders.of(this).get(FavoritosViewModel.class);
@@ -54,6 +53,13 @@ public class FavoritosFragment extends Fragment {
             }
         });
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                FavoritosFragment.super.onItemClicked(ListFragments.ROUTE_FROM_FAVORITOS, id);
+            }
+        });
+
         return view;
     }
 
@@ -61,16 +67,5 @@ public class FavoritosFragment extends Fragment {
     public void onResume(){
         super.onResume();
         this.viewModel.updateFavoritos(getActivity());
-    }
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
     }
 }

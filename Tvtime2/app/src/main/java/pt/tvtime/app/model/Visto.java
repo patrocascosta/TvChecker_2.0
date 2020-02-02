@@ -12,6 +12,15 @@ public class Visto {
     private long idUser;
     private long idSerie;
     public boolean visto;
+    private String image;
+
+    public Visto(long id, long idUser, long idSerie, String image) {
+        this.id = id;
+        this.idUser = idUser;
+        this.idSerie = idSerie;
+        this.image = image;
+    }
+
 
 
     public long getId() {
@@ -48,4 +57,7 @@ public class Visto {
     }
 
 
+    public String getImage() { return image; }
+
+    public void setImage(String image) { this.image = image; }
 }

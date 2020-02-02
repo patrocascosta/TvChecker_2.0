@@ -17,6 +17,6 @@ public class FavoritosViewModel extends ViewModel {
     }
 
     public void updateFavoritos(Context context){
-     //   SeriesRepository.getInstance(context).updateFavoritos();
+        SeriesRepository.getInstance(context).upDateFavoritos();
     }
 }

@@ -1,5 +1,6 @@
 package pt.tvtime.app.repository.local.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -14,7 +15,7 @@ import java.util.List;
 public interface FavoritosDAO {
 
     @Query("SELECT * FROM Favorito")
-    public List<Favorito> getAllFavoritos();
+    LiveData<List<Favorito>> getAllFavoritos();
 
     @Update
     public void update(Favorito favorito);
@@ -24,6 +25,9 @@ public interface FavoritosDAO {
 
     @Insert
     public void insertAll(List<Favorito> favoritoLista);
+
+    @Insert
+    void insertFavoritos(List<Favorito> favoritoList);
 
     @Delete
     public void remove(Favorito favorito);
