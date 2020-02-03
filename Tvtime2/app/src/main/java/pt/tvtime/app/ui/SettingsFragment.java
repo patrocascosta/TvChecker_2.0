@@ -19,7 +19,7 @@ import pt.tvtime.app.adapters.FavoritosAdapter;
 
 public class SettingsFragment extends Fragment {
 
-    private ListView listView;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,17 +30,19 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        listView = (ListView)findViewById(R.id.listViewSettings);
+        ListView listView = view.findViewById(R.id.listViewSettings);
 
         ArrayList<String> arrayList = new ArrayList<>();
 
         arrayList.add("Logout");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.settingsrow, arrayList);
+        //ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.settingsrow, arrayList);
 
-        listView.setAdapter(arrayAdapter);
+        //listView.setAdapter(arrayAdapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

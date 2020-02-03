@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 
 public interface GetSeriesService {
 
-    @GET("")
+    @GET("series")
     Call<List<Serie>> getSeries();
 
     @GET("")

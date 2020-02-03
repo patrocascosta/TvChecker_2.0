@@ -14,8 +14,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import pt.tvtime.app.MainActivity;
 import pt.tvtime.app.R;
 import pt.tvtime.app.SignInActivity;
+import pt.tvtime.app.model.User;
+import pt.tvtime.app.repository.local.AppDatabase;
+import pt.tvtime.app.session.SessionManager;
 
 
 public class SignUpFragment extends Fragment {
@@ -33,8 +37,7 @@ public class SignUpFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
         Button button = view.findViewById(R.id.signUpButton);
@@ -56,6 +59,8 @@ public class SignUpFragment extends Fragment {
                     toast.show();
                     Log.i("SignUpActivity", "Tem de preencher os campos todos");
                     return;
+                }else{
+                    MainActivity.startActivity(getContext());
                 }
             }
         });

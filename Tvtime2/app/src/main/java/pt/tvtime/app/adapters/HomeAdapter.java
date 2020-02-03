@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -49,14 +50,16 @@ public class HomeAdapter extends BaseAdapter {
 
         Serie serie = getItem(position);
 
+        TextView textViewHome = convertView.findViewById(R.id.textViewHome);
+        textViewHome.setText(serie.getNomeSerie());
         ImageView serieImage = convertView.findViewById(R.id.imageViewHome);
         Glide.with(this.context).load(serie.getImagem()).into(serieImage);
 
         return convertView;
     }
 
-    public void updateHome(List<Serie> vistos){
-        this.serieList = vistos;
+    public void updateHome(List<Serie> serieList){
+        this.serieList = serieList;
         notifyDataSetChanged();
     }
 }

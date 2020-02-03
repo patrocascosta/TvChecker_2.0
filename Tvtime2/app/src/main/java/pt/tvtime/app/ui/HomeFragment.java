@@ -35,11 +35,11 @@ public class HomeFragment extends ListFragments {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home_row, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         this.adapter = new HomeAdapter(getActivity());
-        GridView lisViewSerie = view.findViewById(R.id.listViewHome);
-        lisViewSerie.setAdapter(adapter);
+        GridView listViewSerie = view.findViewById(R.id.listViewHome);
+        listViewSerie.setAdapter(adapter);
 
         viewModelHome = ViewModelProviders.of(this).get(HomeViewModel.class);
 
@@ -51,7 +51,7 @@ public class HomeFragment extends ListFragments {
             }
         });
 
-        lisViewSerie.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listViewSerie.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 HomeFragment.super.onItemClicked(HomeFragment.ROUTE_FROM_HOME, id);

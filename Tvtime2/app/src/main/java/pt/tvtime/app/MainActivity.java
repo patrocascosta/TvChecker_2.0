@@ -3,6 +3,7 @@ package pt.tvtime.app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
+import androidx.navigation.NavHost;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,11 +21,13 @@ import pt.tvtime.app.ui.FavoritosFragmentDirections;
 import pt.tvtime.app.ui.HomeFragment;
 import pt.tvtime.app.ui.HomeFragmentDirections;
 import pt.tvtime.app.ui.ListFragments;
+import pt.tvtime.app.ui.VistosFragment;
 import pt.tvtime.app.ui.VistosFragmentDirections;
 
 public class MainActivity extends AppCompatActivity implements ListFragments.OnListFragmentItemClickedListener {
 
     BottomNavigationView bottomNavigationView;
+    private NavController navController;
 
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, MainActivity.class));
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements ListFragments.OnL
         super.onStart();
         if (SessionManager.getActiveSession(this) == -1) {
             SignInActivity.startActivity(this);
-            finish();
+            //finish();
         }
     }
 
@@ -62,11 +65,17 @@ public class MainActivity extends AppCompatActivity implements ListFragments.OnL
     @Override
     public void onItemCliked(String from, long id) {
         if (from.equals(ListFragments.ROUTE_FROM_VISTO)){
-            VistosFragmentDirections.actionVistosFragmentToSeriesDetails();
+            VistosFragmentDirections.ActionVistosFragmentToSerieDetailsFragment action = VistosFragmentDirections.actionVistosFragmentToSerieDetailsFragment();
+            action.setSerieId(id);
+            navController.navigate(action);
         }else if (from.equals(ListFragments.ROUTE_FROM_FAVORITOS)){
-            FavoritosFragmentDirections.actionFavotirosFragmentToSeriesDetails();
+            FavoritosFragmentDirections.ActionFavotirosFragmentToSerieDetailsFragment action = FavoritosFragmentDirections.actionFavotirosFragmentToSerieDetailsFragment();
+            action.setSerieId(id);
+            navController.navigate(action);
         }else if (from.equals(HomeFragment.ROUTE_FROM_HOME)){
-            HomeFragmentDirections.actionHomeFragmentToSerieDetails();
+            HomeFragmentDirections.ActionHomeFragmentToSerieDetailsFragment action = HomeFragmentDirections.actionHomeFragmentToSerieDetailsFragment();
+            action.setSerieId(id);
+            navController.navigate(action);
         }
     }
 }

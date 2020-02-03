@@ -31,14 +31,15 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        this.editTextEmail = findViewById(R.id.editTextEmail);
-        this.editTextPassword = findViewById(R.id.editTextPassword);
+
 
     }
 
 
     public void signIn(long userId) {
 
+        this.editTextEmail = findViewById(R.id.editTextEmail);
+        this.editTextPassword = findViewById(R.id.editTextPassword);
         String email = this.editTextEmail.getText().toString();
         String password = this.editTextPassword.getText().toString();
 
