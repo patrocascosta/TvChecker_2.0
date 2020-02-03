@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.List;
@@ -40,7 +41,7 @@ public class FavoritosFragment extends ListFragments {
         View view = inflater.inflate(R.layout.fragment_favotiros, container, false);
 
         this.adapter = new FavoritosAdapter(getActivity());
-        ListView listView = view.findViewById(R.id.listViewFavoritos);
+        GridView listView = view.findViewById(R.id.listViewFavoritos);
         listView.setAdapter(adapter);
 
         this.viewModel = ViewModelProviders.of(this).get(FavoritosViewModel.class);

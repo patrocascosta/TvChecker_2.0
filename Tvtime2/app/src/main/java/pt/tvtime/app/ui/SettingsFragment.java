@@ -32,15 +32,7 @@ public class SettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
-        ListView listView = view.findViewById(R.id.listViewSettings);
 
-        ArrayList<String> arrayList = new ArrayList<>();
-
-        arrayList.add("Logout");
-
-        //ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.settingsrow, arrayList);
-
-        //listView.setAdapter(arrayAdapter);
 
         return view;
     }

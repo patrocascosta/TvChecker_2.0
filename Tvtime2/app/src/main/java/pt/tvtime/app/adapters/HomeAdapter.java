@@ -28,17 +28,17 @@ public class HomeAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return this.serieList.size();
+        return serieList.size();
     }
 
     @Override
     public Serie getItem(int position) {
-        return this.serieList.get(position);
+        return serieList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return getItem(position).getIdSerie();
     }
 
     @Override
@@ -51,9 +51,10 @@ public class HomeAdapter extends BaseAdapter {
         Serie serie = getItem(position);
 
         TextView textViewHome = convertView.findViewById(R.id.textViewHome);
-        textViewHome.setText(serie.getNomeSerie());
         ImageView serieImage = convertView.findViewById(R.id.imageViewHome);
-        Glide.with(this.context).load(serie.getImagem()).into(serieImage);
+
+        textViewHome.setText(serie.getNomeSerie());
+        Glide.with(this.context).load(serie.getImage()).into(serieImage);
 
         return convertView;
     }

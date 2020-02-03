@@ -1,8 +1,6 @@
 package pt.tvtime.app.ui;
 
-
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,9 +25,9 @@ public class HomeFragment extends ListFragments {
     HomeAdapter adapter;
     private HomeViewModel viewModelHome;
 
-    public HomeFragment() {
+    /*public HomeFragment() {
         // Required empty public constructor
-    }
+    }*/
 
     @Nullable
     @Override
@@ -57,8 +55,13 @@ public class HomeFragment extends ListFragments {
                 HomeFragment.super.onItemClicked(HomeFragment.ROUTE_FROM_HOME, id);
             }
         });
-
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        viewModelHome.updateHome(getActivity());
     }
 
 }

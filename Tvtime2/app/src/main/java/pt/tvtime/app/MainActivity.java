@@ -3,7 +3,6 @@ package pt.tvtime.app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
-import androidx.navigation.NavHost;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,12 +15,10 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import pt.tvtime.app.session.SessionManager;
-import pt.tvtime.app.ui.FavoritosFragment;
 import pt.tvtime.app.ui.FavoritosFragmentDirections;
 import pt.tvtime.app.ui.HomeFragment;
 import pt.tvtime.app.ui.HomeFragmentDirections;
 import pt.tvtime.app.ui.ListFragments;
-import pt.tvtime.app.ui.VistosFragment;
 import pt.tvtime.app.ui.VistosFragmentDirections;
 
 public class MainActivity extends AppCompatActivity implements ListFragments.OnListFragmentItemClickedListener {
@@ -56,8 +53,7 @@ public class MainActivity extends AppCompatActivity implements ListFragments.OnL
 
 
         NavController navController = Navigation.findNavController(this, R.id.fragment);
-        AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(navController.getGraph()).build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         Toolbar toolbar = findViewById(R.id.toolbar);
         NavigationUI.setupWithNavController(toolbar, navController);
     }

@@ -64,7 +64,9 @@ public class SeriesRepository {
     private LiveData<List<Serie>> listLiveDataSerie;
 
     public  LiveData<List<Serie>> getAllSeries(){
-        if (listLiveDataSerie == null) listLiveDataSerie = AppDatabase.getInstance(context).getSeriesDAO().getAllSeries();
+        if (listLiveDataSerie == null){
+            listLiveDataSerie = AppDatabase.getInstance(context).getSeriesDAO().getAllSeries();
+        }
         return listLiveDataSerie;
     }
 

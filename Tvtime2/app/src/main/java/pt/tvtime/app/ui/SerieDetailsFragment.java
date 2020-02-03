@@ -51,7 +51,7 @@ public class SerieDetailsFragment extends Fragment {
         this.textViewName = view.findViewById(R.id.textViewName);
         this.textViewPontuacao = view.findViewById(R.id.textViewPontuacao);
 
-        Glide.with(this.context).load(serie.getImagem()).into(imageViewSerie);
+        Glide.with(this.context).load(serie.getImage()).into(imageViewSerie);
         textViewPontuacao.setText(serie.getImdb());
         textViewName.setText(serie.getNomeSerie());
         textViewDescricao.setText(serie.getDescricao());

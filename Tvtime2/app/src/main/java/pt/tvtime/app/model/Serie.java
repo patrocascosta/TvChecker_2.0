@@ -1,34 +1,32 @@
 package pt.tvtime.app.model;
 
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import java.sql.Array;
+import java.util.ArrayList;
 
 @Entity
 public class Serie {
 
-    @PrimaryKey()
+    @PrimaryKey(autoGenerate = true)
     private long idSerie;
     private String nomeSerie;
-    private long idCategoria;
+    //private ArrayList idCategoria;
     private String imdb;
     private String descricao;
-    private String  imagem;
+    private String image;
     public Boolean visto;
 
-    public Serie(long idSerie, String nomeSerie, long idCategoria, String imdb, String descricao, String imagem) {
+    public Serie(long idSerie, String nomeSerie,/* ArrayList idCategoria,*/ String imdb, String descricao, String image) {
         this.idSerie = idSerie;
         this.nomeSerie = nomeSerie;
-        this.idCategoria = idCategoria;
+        //this.idCategoria = idCategoria;
         this.imdb = imdb;
         this.descricao = descricao;
-        this.imagem = imagem;
+        this.image = image;
     }
 
-
-    public void setIdCategoria(long idCategoria) {
-        this.idCategoria = idCategoria;
-    }
 
     public Boolean getVisto() {
         return visto;
@@ -46,9 +44,6 @@ public class Serie {
     public String Imdb() {
         return imdb;
     }
-    public long getIdCategoria() {
-        return idCategoria;
-    }
 
     public String getDescricao() {
         return descricao;
@@ -58,7 +53,6 @@ public class Serie {
         return nomeSerie;
     }
 
-    public String getImagem() { return imagem;}
 
     public String getImdb() {
         return imdb;
@@ -73,10 +67,6 @@ public class Serie {
         this.nomeSerie = nomeSerie;
     }
 
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
     public void setImdb(String imdb) {
         this.imdb = imdb;
     }
@@ -85,7 +75,19 @@ public class Serie {
         this.descricao = descricao;
     }
 
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
+    public String getImage() {
+        return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+   /* public Array getIdCategoria() {
+        return (Array) idCategoria;
+    }
+
+    public void setIdCategoria(ArrayList idCategoria) {
+        this.idCategoria = idCategoria;
+    }*/
 }
