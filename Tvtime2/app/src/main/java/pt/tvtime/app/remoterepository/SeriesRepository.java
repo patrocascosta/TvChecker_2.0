@@ -110,7 +110,7 @@ public class SeriesRepository {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            AppDatabase.getInstance(context).getVistosDAO().getAllVistos();
+                            AppDatabase.getInstance(context).getVistosDAO().insertVistos(vistoList);
                         }
                     }).start();
                 }

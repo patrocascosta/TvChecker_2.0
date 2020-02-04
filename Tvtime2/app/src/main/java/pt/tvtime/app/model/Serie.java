@@ -3,9 +3,6 @@ package pt.tvtime.app.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.sql.Array;
-import java.util.ArrayList;
-
 @Entity
 public class Serie {
 
@@ -40,11 +37,6 @@ public class Serie {
         return idSerie;
     }
 
-
-    public String Imdb() {
-        return imdb;
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -53,19 +45,15 @@ public class Serie {
         return nomeSerie;
     }
 
-
     public String getImdb() {
         return imdb;
     }
-
 
     public void setIdSerie(long idSerie) {
         this.idSerie = idSerie;
     }
 
-    public void setNomeSerie(String nomeSerie) {
-        this.nomeSerie = nomeSerie;
-    }
+    public void setNomeSerie(String nomeSerie) { this.nomeSerie = nomeSerie; }
 
     public void setImdb(String imdb) {
         this.imdb = imdb;
@@ -83,11 +71,7 @@ public class Serie {
         this.image = image;
     }
 
-   /* public Array getIdCategoria() {
-        return (Array) idCategoria;
-    }
+   /* public Array getIdCategoria() { return (Array) idCategoria; }
 
-    public void setIdCategoria(ArrayList idCategoria) {
-        this.idCategoria = idCategoria;
-    }*/
+    public void setIdCategoria(ArrayList idCategoria) { this.idCategoria = idCategoria; }*/
 }
