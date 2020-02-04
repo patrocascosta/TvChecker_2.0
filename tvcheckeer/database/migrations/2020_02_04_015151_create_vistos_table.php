@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEpisodiosTable extends Migration
+class CreateVistosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateEpisodiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('episodios', function (Blueprint $table) {
+        Schema::create('vistos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
-            $table->string('id_categoria');
+            $table->integer('idUser');
+            $table->string('favorito');
+            $table->integer('idFavorito');
+            $table->string('imagem');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateEpisodiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('episodios');
+        Schema::dropIfExists('vistos');
     }
 }
