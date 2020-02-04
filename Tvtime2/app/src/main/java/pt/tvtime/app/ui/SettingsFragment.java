@@ -16,10 +16,11 @@ import java.util.ArrayList;
 
 import pt.tvtime.app.R;
 import pt.tvtime.app.adapters.FavoritosAdapter;
+import pt.tvtime.app.session.SessionManager;
 
 public class SettingsFragment extends Fragment {
 
-
+    Context context;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,10 @@ public class SettingsFragment extends Fragment {
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
+    }
+
+    public void logout(View view){
+        SessionManager.deleteSession(context);
     }
 
     @Override

@@ -1,12 +1,9 @@
 package pt.tvtime.app.ui;
 
-import android.content.Context;
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
@@ -14,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListView;
 
 import java.util.List;
 
@@ -47,7 +43,7 @@ public class FavoritosFragment extends ListFragments {
         this.viewModel = ViewModelProviders.of(this).get(FavoritosViewModel.class);
 
         LiveData<List<Favorito>> liveDataFavoritos = this.viewModel.getFavoritos(getActivity());
-        liveDataFavoritos.observe(this, new Observer<List<Favorito>>() {
+        liveDataFavoritos.observe(getActivity(), new Observer<List<Favorito>>() {
             @Override
             public void onChanged(List<Favorito> favoritos) {
                 FavoritosFragment.this.adapter.updateFavoritos(favoritos);
