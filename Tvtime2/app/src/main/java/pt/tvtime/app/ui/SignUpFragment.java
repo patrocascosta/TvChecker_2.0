@@ -24,12 +24,9 @@ import pt.tvtime.app.session.SessionManager;
 
 public class SignUpFragment extends Fragment {
 
-
-
         public static void startActivity(Context context) {
             context.startActivity(new Intent(context, SignInActivity.class));
         }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

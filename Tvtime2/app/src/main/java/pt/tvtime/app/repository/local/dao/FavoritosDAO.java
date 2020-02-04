@@ -11,6 +11,8 @@ import pt.tvtime.app.model.Favorito;
 
 import java.util.List;
 
+import static androidx.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface FavoritosDAO {
 
@@ -26,7 +28,7 @@ public interface FavoritosDAO {
     @Insert
     public void insertAll(List<Favorito> favoritoLista);
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     void insertFavoritos(List<Favorito> favoritoList);
 
     @Delete

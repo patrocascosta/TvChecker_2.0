@@ -1,6 +1,5 @@
 package pt.tvtime.app.adapters;
 
-
 import android.content.Context;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;

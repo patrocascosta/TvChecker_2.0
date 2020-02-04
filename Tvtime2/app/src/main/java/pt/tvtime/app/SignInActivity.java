@@ -25,16 +25,11 @@ public class SignInActivity extends AppCompatActivity {
         context.startActivity(new Intent(context, SignInActivity.class));
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
-
-
     }
-
 
     public void signIn(long userId) {
 

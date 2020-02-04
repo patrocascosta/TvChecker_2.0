@@ -1,6 +1,5 @@
 package pt.tvtime.app.ui;
 
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,10 +22,6 @@ import pt.tvtime.app.adapters.VistosAdapter;
 import pt.tvtime.app.model.Visto;
 import pt.tvtime.app.viewmodel.VistosViewModel;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class VistosFragment extends ListFragments {
 
     private VistosAdapter adapter;
@@ -34,13 +29,11 @@ public class VistosFragment extends ListFragments {
 
 
     public VistosFragment() {
-        // Required empty public constructor
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_vistos, container, false);
 
         this.adapter = new VistosAdapter(getActivity());
