@@ -88,7 +88,7 @@ public class SeriesRepository {
 
             @Override
             public void onFailure(Call<List<Serie>> call, Throwable t) {
-
+t.printStackTrace();
             }
         });
     }

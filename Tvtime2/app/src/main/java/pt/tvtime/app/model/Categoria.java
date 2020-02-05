@@ -7,11 +7,6 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Categoria {
 
-    public static final long THRILLER = 1;
-    public static final long COMEDIA = 2;
-    public static final long DRAMA = 3;
-    public static final long CRIME = 4;
-
     @PrimaryKey(autoGenerate = true)
     private int idCategoria;
     private String nomeCategoria;

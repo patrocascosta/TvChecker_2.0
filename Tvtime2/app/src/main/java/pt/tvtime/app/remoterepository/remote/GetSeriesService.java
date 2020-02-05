@@ -18,4 +18,14 @@ public interface GetSeriesService {
 
     @GET("visto")
     Call<List<Visto>> getVistos();
+
+
+    /*@GET("series/")
+    Call<List<Serie>> getSeries();
+
+    @GET("favoritos/")
+    Call<List<Favorito>> getFavoritos();
+
+    @GET("visto/")
+    Call<List<Visto>> getVistos();*/
 }

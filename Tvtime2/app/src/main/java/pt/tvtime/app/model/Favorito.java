@@ -7,10 +7,11 @@ import androidx.room.PrimaryKey;
 public class Favorito {
 
     @PrimaryKey(autoGenerate = true)
+    private long idFavoritos;
     private long idUser;
     private long idSerie;
     private boolean favorito;
-    private long idFavoritos;
+
     private String image;
 
     public Favorito(long idUser, long idSerie, boolean favorito, long idFavoritos, String image) {
