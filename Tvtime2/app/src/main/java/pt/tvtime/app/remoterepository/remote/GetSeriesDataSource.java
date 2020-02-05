@@ -6,12 +6,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class GetSeriesDataSource {
 
     private static GetSeriesService service = new Retrofit.Builder()
-            .baseUrl("http://my-json-server.typicode.com/godofanimes/Series/")
+            .baseUrl("https://my-json-server.typicode.com/godofanimes/Series/")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(GetSeriesService.class);
 
    /* private static GetSeriesService service = new Retrofit.Builder()
-            .baseUrl("http://localhost:8000/api/serie/")
+            .baseUrl("https://localhost:8000/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(GetSeriesService.class);*/
 

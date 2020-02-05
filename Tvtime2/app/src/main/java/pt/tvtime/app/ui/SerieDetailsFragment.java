@@ -1,6 +1,5 @@
 package pt.tvtime.app.ui;
 
-
 import android.content.Context;
 import android.os.Bundle;
 
@@ -21,25 +20,20 @@ import pt.tvtime.app.model.Serie;
 import pt.tvtime.app.repository.local.AppDatabase;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SerieDetailsFragment extends Fragment {
 
     private ImageView imageViewSerie;
     private TextView textViewPontuacao;
     private TextView textViewName;
     private TextView textViewDescricao;
-    Context context;
 
-    public SerieDetailsFragment() {
-        // Required empty public constructor
-    }
+    /*public SerieDetailsFragment() {
+
+    }*/
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_serie_details, container, false);
 
         long serieId = getArguments().getLong("serieId");
@@ -51,7 +45,7 @@ public class SerieDetailsFragment extends Fragment {
         this.textViewName = view.findViewById(R.id.textViewName);
         this.textViewPontuacao = view.findViewById(R.id.textViewPontuacao);
 
-        Glide.with(this.context).load(serie.getImage()).into(imageViewSerie);
+        //Glide.with(getContext()).load(serie.getImage()).into(imageViewSerie);
         textViewPontuacao.setText(serie.getImdb());
         textViewName.setText(serie.getNomeSerie());
         textViewDescricao.setText(serie.getDescricao());

@@ -3,6 +3,7 @@ package pt.tvtime.app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
+import androidx.navigation.NavHost;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,7 +24,7 @@ import pt.tvtime.app.ui.VistosFragmentDirections;
 
 public class MainActivity extends AppCompatActivity implements ListFragments.OnListFragmentItemClickedListener {
 
-    BottomNavigationView bottomNavigationView;
+    //BottomNavigationView bottomNavigationView;
     private NavController navController;
 
     public static void startActivity(Context context) {
@@ -34,7 +35,18 @@ public class MainActivity extends AppCompatActivity implements ListFragments.OnL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        setUpNavigation();
+        //setUpNavigation();
+
+        final BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+        final NavHost navHost = (NavHost) this.getSupportFragmentManager().findFragmentById(R.id.fragment);
+        NavigationUI.setupWithNavController(bottomNav, navHost.getNavController());
+        navController = navHost.getNavController();
+
+
+        NavController navController = Navigation.findNavController(this, R.id.fragment);
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        NavigationUI.setupWithNavController(toolbar, navController);
     }
 
     @Override
@@ -46,17 +58,11 @@ public class MainActivity extends AppCompatActivity implements ListFragments.OnL
         }
     }
 
-    public void setUpNavigation(){
+   /* public void setUpNavigation(){
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavHostFragment navHostFragment = (NavHostFragment)getSupportFragmentManager().findFragmentById(R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
-
-
-        NavController navController = Navigation.findNavController(this, R.id.fragment);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        NavigationUI.setupWithNavController(toolbar, navController);
-    }
+    }*/
 
     @Override
     public void onItemCliked(String from, long id) {
