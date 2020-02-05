@@ -67,11 +67,11 @@
     <fragment
         android:id="@+id/serieDetailsFragment"
         android:name="pt.tvtime.app.ui.SerieDetailsFragment"
-        android:label="fragment_serie_details"
-        tools:layout="@layout/fragment_serie_details" >
+        android:label="Serie Details"
+        tools:layout="@layout/fragment_serie_details">
         <argument
             android:name="serieId"
-            app:argType="long"
-            android:defaultValue="0L" />
+            android:defaultValue="0L"
+            app:argType="long" />
     </fragment>
 </navigation>
