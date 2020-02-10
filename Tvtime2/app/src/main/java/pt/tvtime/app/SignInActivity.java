@@ -55,7 +55,6 @@ public class SignInActivity extends AppCompatActivity {
         User user = AppDatabase.getInstance(this).getUserDAO().getUserByEmail(email);
         if (user != null) {
             if (user.getPassword().equals(password)) {
-
                 MainActivity.startActivity(this);
                 SessionManager.saveSession(this, user.getUserId());
                 finish();
